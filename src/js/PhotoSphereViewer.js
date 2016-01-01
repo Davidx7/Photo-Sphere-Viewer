@@ -349,6 +349,7 @@ PhotoSphereViewer.prototype._createScene = function(img) {
   var geometry = new THREE.SphereGeometry(200, 32, 32, -PhotoSphereViewer.HalfPI);
   var material = new THREE.MeshBasicMaterial({map: texture, overdraw: true});
   material.side = THREE.DoubleSide;
+  material.map.minFilter = THREE.LinearFilter;
   var mesh = new THREE.Mesh(geometry, material);
   mesh.scale.x = -1;
 
